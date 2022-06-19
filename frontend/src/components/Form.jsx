@@ -8,7 +8,7 @@ export default function Form() {
     // username:"",
     // email:"",
   });
-  //const [aler,setAler]=useState({})
+  const [aler,setAler]=useState(false)
 
   const handlechange = (e) => {
     //console.log(e.target.value)
@@ -35,16 +35,23 @@ export default function Form() {
   .then(function (response) {
     
     console.log(response);
-   // setAler(response)
-   
+   setAler(true)
+
     
   
   })
   .catch(function (error) {
     console.log(error);
-    
+    setAler(false)
+   
   });
+      if(aler===true){
+        alert("Successfully user details are added")
+      }
+      else{
 
+        alert("failed to add the user details, please fill the details")
+      }
   };
 
   return (
