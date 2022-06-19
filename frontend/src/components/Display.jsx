@@ -6,12 +6,6 @@ export default function Display() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    // async function getData() {
-    //   try {
-    //     let res = await fetch("/users")
-    //   let data = await res.json()
-    //   console.log(data.user)
-    //   setList(data.user);
     axios({
       url: "/users",
     })
@@ -23,16 +17,8 @@ export default function Display() {
       })
       .catch((err) => {
         
-        
+        console.log(err);
       });
-
-        
-    
-   
-
-
-
-    
   }, []);
 
   return (

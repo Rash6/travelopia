@@ -4,10 +4,7 @@ import "./display.css";
 import axios from "axios";
 
 export default function Form() {
-  const [formdata, setFormdata] = useState({
-    // username:"",
-    // email:"",
-  });
+  const [formdata, setFormdata] = useState({});
   
 
   const handlechange = (e) => {
@@ -20,16 +17,10 @@ export default function Form() {
     });
   };
 
-  //to submit the form
 
   const handlesubmit = (e) => {
     e.preventDefault();
     console.log(formdata);
-  //  fetch("http://localhost:5000/users", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(formdata),
-  //   });
 
   axios.post('/users', formdata)
   .then(function (response) {
@@ -37,8 +28,6 @@ export default function Form() {
     console.log(response);
    alert("successfully details are added")
 
-    
-  
   })
   .catch(function (error) {
     console.log(error);
@@ -142,9 +131,7 @@ export default function Form() {
       </table>
       
    </form>
-   
- 
-   
+  
    </>
    
   );
